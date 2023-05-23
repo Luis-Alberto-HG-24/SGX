@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{$titulo}}</title>
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
-    
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body>
     @include('sweetalert::alert')
     @yield('contenido')
-
     <script src="{{asset('js/jq.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    @yield('scripts')
 </body>
 </html>
