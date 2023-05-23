@@ -30,3 +30,52 @@
     --rojo4: #AB0D2F;
     --rojo5: #CD0C36;
 }
+
+/* body{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(164,228,249,1) 12%, rgba(255,255,255,1) 50%);
+} */
+
+body {
+    background: url('../img/login3.jpeg') no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* --------- ESTILOS DEL LOGIN --------- */
+
+.img-login{
+    height: 100px;
+}
+
+.login{
+    border-radius: 3%;
+}
+
+.form-light{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0%;
+}
+
+.btn-login{
+    background-color: var(--azul4);
+    color: whitesmoke;
+}
+
+
+.btn-login:hover{
+    background-color: var(--verde2);
+    color: white;
+}
+
+.small-2{
+    font-size: 13px;
+}
+
+
+
+
