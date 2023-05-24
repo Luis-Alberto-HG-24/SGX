@@ -14,4 +14,3 @@ Route::controller(AuthController::class)->group(function (){
     Route::post('/signIn', 'logear')->name('auth-logear');
     Route::get('/logout', 'logout')->name('auth-logout');
 });
-
