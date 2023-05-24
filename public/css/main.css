@@ -31,11 +31,6 @@
     --rojo5: #CD0C36;
 }
 
-/* body{
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(164,228,249,1) 12%, rgba(255,255,255,1) 50%);
-} */
-
 body {
     background: url('../img/login3.jpeg') no-repeat center center fixed ;
     -webkit-background-size: cover;
@@ -76,6 +71,197 @@ body {
     font-size: 13px;
 }
 
+.body-inicio{
+  background: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.bg-white{
+  background: white;
+}
 
 
+.img-usuario-inicio{
+  height: 50px;
+}
 
+.img-icon{
+    height: 30px;
+}
+
+.nombre-usuario{
+    text-decoration: none !important;
+}
+
+#mainNav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+  }
+  #mainNav .navbar-toggler {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  #mainNav .navbar-brand {
+    color: #ffc800;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    letter-spacing: 0.0625em;
+    text-transform: uppercase;
+  }
+  #mainNav .navbar-brand img {
+    height: 1.5rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 0.0625em;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: var(--azul1);
+  }
+  
+  @media (min-width: 992px) {
+    #mainNav {
+      padding-top: 1.5rem;
+      border: none;
+      background-color: transparent;
+      transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    }
+    #mainNav .navbar-brand {
+      font-size: 1.5em;
+      transition: font-size 0.3s ease-in-out;
+    }
+    #mainNav .navbar-brand img {
+      height: 2rem;
+      transition: height 0.3s ease-in-out;
+    }
+    #mainNav.navbar-shrink {
+      padding-top: 1rem;
+      background-color: #212529;
+    }
+    #mainNav.navbar-shrink .navbar-brand {
+      font-size: 1.25em;
+    }
+    #mainNav.navbar-shrink .navbar-brand svg,
+    #mainNav.navbar-shrink .navbar-brand img {
+      height: 1.5rem;
+    }
+    #mainNav .navbar-nav .nav-item {
+      margin-right: 1rem;
+    }
+    #mainNav .navbar-nav .nav-item:last-child {
+      margin-right: 0;
+    }
+}
+header.masthead {
+    padding-top: 10.5rem;
+    text-align: center;
+    color: #fff;
+    background-image: url("../img/inicio_dash.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+  header.masthead .masthead-subheading {
+    font-style: italic;
+    line-height: 1.5rem;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  @media (min-width: 768px) {
+    header.masthead .masthead-subheading {
+      font-size: 2.25rem;
+      font-style: italic;
+      line-height: 2.25rem;
+      margin-bottom: 2rem;
+    }
+    header.masthead .masthead-heading {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 4.5rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .border-left-primary {
+    border-left: 0.25rem solid #4e73df !important;
+  }
+
+  .borde-inicio{
+    border-radius: 3%;
+  }
+
+  .bg-barra-azul{
+    background-color: var(--azul4);
+  }
+
+  .bg-barra-azul{
+    background-color: var(--verde3);
+  }
+
+  .bg-barra-rojo{
+    background-color: var(--rojo5);
+  }
+
+  .btn-flotante {
+    color: #ffffff;
+    border-radius: 100%;
+    background-color: var(--verde8); /* Color de fondo */
+    padding: 1%;
+    position: fixed;
+    bottom: 550px;
+    right: 40px;
+    transition: all 300ms ease 0ms;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+  }
+  .btn-flotante:hover {
+    background-color: var(--verde7) ; /* Color de fondo al pasar el cursor */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-7px);
+  }
+  @media only screen and (max-width: 600px) {
+     .btn-flotante {
+      font-size: 14px;
+      padding: 12px 20px;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  .img-icon-agregar{
+    height: 25px;
+  }
+
+  .btn-cerrar{
+    background-color: var(--pastel4);
+    color: white;
+  }
+
+  .btn-cerrar:hover{
+    background-color: var(--pastel3);
+    color: white;
+  }
+
+  .card-alumno{
+    transition: all 0.3s;
+  }
+
+  .card-alumno:hover{
+    scale: 1.03;
+  }

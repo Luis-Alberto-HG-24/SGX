@@ -12,4 +12,9 @@ class Vistas extends Controller
         $titulo = 'Login';
         return view('login',compact('titulo'));
     }
+
+    public function inicio(){
+        $titulo = 'Inicio';
+        return view('inicio',compact('titulo'));
+    }
 }

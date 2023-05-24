@@ -10,8 +10,10 @@
 </head>
 <body>
     @include('sweetalert::alert')
+    @include('shared/nav')
     @yield('contenido')
     <script src="{{asset('js/jq.js')}}"></script>
+    <script src="{{mix('js/app.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
     @yield('scripts')
 </body>
