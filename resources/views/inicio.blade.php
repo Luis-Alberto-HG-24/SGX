@@ -15,7 +15,7 @@
             <div class="row my-5">
                 <div class="col-lg-6">
                     {{-- Plantilla de usuarios --}}
-                   <a href="" class="text-decoration-none text-muted border ">
+                    <a href="" class="text-decoration-none text-muted ">
                         <div class="container border-left-primary shadow border-0 card p-3 card-alumno">
                             <div class="row">
                                 <div class="col-lg-4 me-3">

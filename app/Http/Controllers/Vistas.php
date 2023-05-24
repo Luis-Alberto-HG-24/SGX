@@ -17,7 +17,7 @@ class Vistas extends Controller
 
     public function index(){
         $titulo = "Inicio";
-        return view('index', compact('titulo'));
+        return view('inicio', compact('titulo'));
     }
 
     public function registrar(Request $request)
