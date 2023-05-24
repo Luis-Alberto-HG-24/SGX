@@ -14,34 +14,34 @@
                             <p class="fw-light text-muted">Sistema Gestor <br> de ExtraEscolares</p>
                         </div>
                     </div>
-                   <form action="" method="POST">
-                       @csrf
-                       @method('POST')
+                    <form action="{{ route('auth-logear') }}" method="POST">
+                        @csrf
+                        @method('POST')
                         <div class="row justify-content-center mt-5">
                             <div class="col-10">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control form-light" id="correoLogin" name="correoLogin" placeholder="Correo">
-                                    <label for="correoLogin" class="fw-light text-muted"><i class="fa-solid fa-envelope me-2 text-muted"></i>Correo</label>
+                                    <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario">
+                                    <label for="userLogin" class="fw-light text-muted"><i class="fa-solid fa-user me-2 text-muted"></i>Usuario</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-10">
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control form-light" id="passwordLogin" name="passwordLogin" placeholder="Password">
+                                    <input type="password" class="form-control form-light" id="password" name="password">
                                     <label for="passwordLogin" class="fw-light text-muted"><i class="fa-solid fa-key me-2 text-muted"></i>Contraseña</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3">
                             <div class="col-12 text-center">
-                                <button type="button" class="btn btn-login">Ingresar</button>
+                                <button class="btn btn-login">Ingresar</button>
                             </div>
                             <div class="col-12 text-center mt-2">
                                 <span class="btn fw-light text-muted my-3 text-decoration-none small-2" id="btn_crearCuenta">Crear cuenta</span>
                             </div>
                         </div>
-                   </form>
+                    </form>
                 </div>
             </div>
         </div>
@@ -56,9 +56,9 @@
                             <img src="{{asset('img/usuarioDefecto.png')}}" alt="" class="img-login mb-4">
                         </div>
                     </div>
-                   <form action="" method="POST">
-                       @csrf
-                       @method('POST')
+                    <form action="{{ route('vistas-registro') }}" method="POST">
+                        @csrf
+                        @method('POST')
                         <div class="row my-3">
                             <div class="col-12 col-lg-6">
                                 <div class="form-floating mb-4">
@@ -68,25 +68,25 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="apellidoP" name="apellidoP" placeholder="Apellido Paterno">
+                                    <input type="text" class="form-control form-light" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno">
                                     <label for="apellidoP" class="fw-light text-muted"><i class="fa-solid fa-user me-2"></i>Apellido Paterno</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="apellidoM" name="apellidoM" placeholder="Apellido Materno">
+                                    <input type="text" class="form-control form-light" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno">
                                     <label for="apellidoM" class="fw-light text-muted"><i class="fa-solid fa-user me-2"></i>Apellido Materno</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="email" class="form-control form-light" id="correo" name="correo" placeholder="Correo">
+                                    <input type="email" class="form-control form-light" id="email" name="email" placeholder="Correo">
                                     <label for="correo" class="fw-light text-muted"><i class="fa-solid fa-envelope me-2"></i>Correo</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de usuario">
+                                    <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de usuario">
                                     <label for="nombreUsuario" class="fw-light text-muted"><i class="fa-regular fa-circle-user me-2"></i>Nombre de usuario</label>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                 <span class="btn small-2 fw-light text-muted" id="btn_login">Iniciar sesion</span>
                             </div>
                         </div>
-                   </form>
+                    </form>
                 </div>
             </div>
         </div>
