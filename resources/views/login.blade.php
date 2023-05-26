@@ -20,7 +20,7 @@
                         <div class="row justify-content-center mt-5">
                             <div class="col-10">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario">
+                                    <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" required placeholder="Username here">
                                     <label for="userLogin" class="fw-light text-muted"><i class="fa-solid fa-user me-2 text-muted"></i>Usuario</label>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@
                         <div class="row justify-content-center">
                             <div class="col-10">
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control form-light" id="password" name="password">
+                                    <input type="password" class="form-control form-light" id="password" name="password" required placeholder="Password here">
                                     <label for="passwordLogin" class="fw-light text-muted"><i class="fa-solid fa-key me-2 text-muted"></i>Contraseña</label>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             <img src="{{asset('img/usuarioDefecto.png')}}" alt="" class="img-login mb-4">
                         </div>
                     </div>
-                    <form action="{{ route('vistas-registro') }}" method="POST">
+                    <form action="{{ route('funciones-registro') }}" method="POST">
                         @csrf
                         @method('POST')
                         <div class="row my-3">
