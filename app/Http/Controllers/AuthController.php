@@ -15,10 +15,11 @@ class AuthController extends Controller
         header("Pragma: no-cache");
         header("Expires: 0");
         $titulo = 'Login';
+        $navbar = false;
         if (Auth::check()) {
             return redirect()->route('vistas-inicio');
         }
-        return view('login', compact('titulo'));
+        return view('login', compact('titulo','navbar'));
     }
 
     public function logear(Request $request)

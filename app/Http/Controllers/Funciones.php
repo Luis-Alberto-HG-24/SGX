@@ -101,9 +101,11 @@ class Funciones extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_estudiante)
+
+    public function updateModal(Request $request)
     {
-        $item = Estudiante::find($id_estudiante);
+        $id = $request->id_estudiante;
+        $item = Estudiante::find($id);
         $item->nombre_estudiante = $request->nombre_estudiante;
         $item->apellidoPaterno_estudiante = $request->apellidoPaterno_estudiante;
         $item->apellidoMaterno_estudiante = $request->apellidoMaterno_estudiante;
@@ -114,7 +116,7 @@ class Funciones extends Controller
         $item->escuela_procedencia = $request->escuela_procedencia;
         $item->fecha_registro = $request->fecha_registro;
         if ($item->save()) {
-            alert()->success('Exito', 'Los datos se han actualizado exitosamente.');
+            Alert::success('Exito', 'Los datos se han actualizado exitosamente.');
             return redirect()->route('vistas-inicio');
         } else {
             alert()->error('Error', 'Los datos no se han actualizado.');
@@ -122,21 +124,31 @@ class Funciones extends Controller
         }
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_estudiante)
-    {
-        $item = Estudiante::find($id_estudiante);
+
+    public function destroyModal(Request $request)
+    {   
+        $id = $request->id_estudiante_eliminar;
+        $item = Estudiante::find($id);
         if ($item->delete()) {
-            alert()->success('Exito', 'Los datos se han eliminado exitosamente.');
-            return redirect('/');
+            Alert::success('Exito', 'Los datos se han eliminado exitosamente.');
+            return redirect() -> route('vistas-inicio');
         } else {
             alert()->error('Error', 'Los datos no se han eliminado.');
             return redirect('/delete');
         }
     }
+
+    public function obtenerDatos($id){
+        $datos = Estudiante::find($id);
+        return response()->json($datos);
+    }
 }
+
+

@@ -18,8 +18,15 @@ class Vistas extends Controller
 
     public function index(){
         $titulo = "Inicio";
+        $navbar = true;
         $items = Estudiante::all();
-        return view('inicio', compact('titulo', 'items'));
+        return view('inicio', compact('titulo', 'items','navbar'));
+    }
+
+    public function perfilEstudiante($id){
+        $titulo = "Perfil de estudiante";
+        $datos = Estudiante::find($id);
+        return view('modules/perfilEstudiante',compact('titulo','datos'));
     }
 
 }
