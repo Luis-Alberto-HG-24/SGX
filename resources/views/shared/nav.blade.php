@@ -8,7 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-              <li class="nav-item"><a data-bs-toggle="offcanvas" href="#offcanvasSGX" role="button" aria-controls="offcanvasSGX" class="nav-link  fs-5 fw-light mt-4" href="#team">SGX</a></li>
+              <li class="nav-item"><a href="{{route('vistas-inicio')}}" class="nav-link  fs-5 fw-light mt-4">SGX</a></li>
               <li class="nav-item"><a class="nav-link mt-4" href="#contact"><img src="{{asset('icons/gear.png')}}" alt="" class="img-icon" ></a></li>
           </ul>
       </div>
@@ -28,30 +28,10 @@
                 <div class="fw-light fs-3">Perfil</div>
             </div>
         </div>
-      </div>
-    </div>
-</div>
-
-{{-- OFF CANVAS SGX --}}
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSGX" aria-labelledby="offcanvasSGX">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="fw-light fs-3">Sistema Gestor de Extra escolares</div>
-            </div>
-        </div>
-        <div class="row my-5">
-            <div class="col">
-                <ul>
-                    <li>Agregar estudiante</li>
-                </ul>
-            </div>
+        <div class="row mt-5">
+          <div class="col text-center fw-light hover-opcion">
+              <a href="{{route('auth-logout')}}" class="text-decoration-none text-muted"><i class="fa-solid fa-door-open me-2 hover-opcion"></i>Cerrar Sesión</a>
+          </div>
         </div>
       </div>
     </div>
