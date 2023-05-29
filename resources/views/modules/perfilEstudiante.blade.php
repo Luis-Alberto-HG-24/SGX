@@ -101,68 +101,81 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 fw-light" id="exampleModalLabel">Actualizar un Estudiante</h1>
+                    <h1 class="modal-title fs-5 fw-light" id="exampleModalLabel">Agregar un Estudiante</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="container my-3">
-                        <form action="{{route('funciones-updateModal')}}" method="POST">
+                        <form action="{{ route('funciones-updateModal') }}" method="POST">
+                            <input type="number" name="id_estudiante" id="id_estudiante" value="{{$datos->id_estudiante}}" class="d-none">
+                            <input type="text" name="tipo" id="tipo" value="perfil" hidden>
                             @method('PUT')
                             @csrf
-                            <input type="number" id="id_estudiante" name="id_estudiante" class="d-none" value="{{$datos->id_estudiante}}">
                             <div class="row justify-content-center">
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="nombre_estudiante" name="nombre_estudiante" value="{{$datos->nombre_estudiante}}">
-                                        <label for="nombre_estudiante_act" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Nombre </label>
+                                        <input type="text" class="form-control form-light" id="nombre_estudiante" name="nombre_estudiante" placeholder="Nombre" required value="{{$datos->nombre_estudiante}}">
+                                        <label for="nombre_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Nombre </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="apellidoPaterno_estudiante" name="apellidoPaterno_estudiante" value="{{$datos->apellidoPaterno_estudiante}}">
+                                        <input type="text" class="form-control form-light" id="apellidoPaterno_estudiante" name="apellidoPaterno_estudiante" placeholder="Apellido Paterno" required value="{{$datos->apellidoPaterno_estudiante}}">
                                         <label for="apellidoPaterno_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Apellido Paterno</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="apellidoMaterno_estudiante" name="apellidoMaterno_estudiante" value="{{$datos->apellidoMaterno_estudiante}}">
+                                        <input type="text" class="form-control form-light" id="apellidoMaterno_estudiante" name="apellidoMaterno_estudiante" placeholder="Apellido Materno" required value="{{$datos->apellidoMaterno_estudiante}}">
                                         <label for="apellidoMaterno_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Apellido Materno</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="number" class="form-control form-light" id="numero_control" name="numero_control" value="{{$datos->numero_control}}">
+                                        <input type="number" class="form-control form-light" id="numero_control" name="numero_control" placeholder="Número de Control" pattern="[0-9]{10}" maxlength="9" value="{{$datos->numero_control}}">
                                         <label for="numero_control" class="fw-light text-muted"><i class="fa-solid fa-arrow-up-9-1 me-2"></i> Numero de control</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="number" class="form-control form-light" id="telefono_celular" name="telefono_celular" value="{{$datos->telefono_celular}}">
-                                        <label for="telefono_celular" class="fw-light text-muted"><i class="fa-solid fa-mobile me-2"></i> Telefono Celular</label>
+                                        <input type="tel" class="form-control form-light" id="telefono_celular" name="telefono_celular" placeholder="Teléfono celular" pattern="[0-9]{10}" maxlength="10" required value="{{$datos->telefono_celular}}">
+                                        <label for="telefono_celular" class="fw-light text-muted"><i class="fa-solid fa-mobile me-2"></i> Teléfono Celular</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-light" id="carrera" name="carrera" value="{{$datos->carrera}}">
+                                    <div class="form mb-3">
                                         <label for="carrera" class="fw-light text-muted"><i class="fa-solid fa-graduation-cap"></i> Carrera </label>
+                                        <select class="form-select form-control form-light" type="text" id="carrera" name="carrera" placeholder="Carrera" aria-label="Default select example" required>
+                                            <option  selected value="{{$datos->carrera}}">Seleccionar otra carrera...</option>
+                                            @if ($datos->carrera == "Ingeniería en Sistemas Computacionales")
+                                                <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+                                                <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                                            @elseif ($datos->carrera == "Ingeniería en Gestión Empresarial")
+                                                <option value="Ingeniería en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                                                <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                                            @else
+                                                <option value="Ingeniería en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                                                <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+                                            @endif
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="date" class="form-control form-light" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" value="{{$datos->fecha_nacimiento}}">
+                                        <input type="date" class="form-control form-light" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required value="{{$datos->fecha_nacimiento}}">
                                         <label for="fecha_nacimiento" class="fw-light text-muted"><i class="fa-regular fa-calendar me-2"></i> Fecha de Nacimiento</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="escuela_procedencia" name="escuela_procedencia" placeholder="Escuela de Procedencia" value="{{$datos->escuela_procedencia}}">
-                                        <label for="escuela_procedencia" class="fw-light text-muted"><i class="fa-solid fa-school me-2"></i> Escuela de procedencia</label>
+                                        <input type="text" class="form-control form-light" id="escuela_procedencia" name="escuela_procedencia" placeholder="Escuela de Procedencia" required value="{{$datos->escuela_procedencia}}">
+                                        <label for="escuela_procedencia" class="fw-light text-muted"><i class="fa-solid fa-school me-2"></i> Escuela de Procedencia</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="date" class="form-control form-light" id="fecha_registro" name="fecha_registro" placeholder="Fecha de Ingreso" value="{{$datos->fecha_registro}}">
-                                        <label for="fecha_registro" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Fecha ingreso</label>
+                                        <input type="date" class="form-control form-light" id="fecha_registro" name="fecha_registro" placeholder="Fecha de Ingreso" required value="{{$datos->fecha_registro}}">
+                                        <label for="fecha_registro" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Fecha de Ingreso</label>
                                     </div>
                                 </div>
                                 <div class="modal-footer">

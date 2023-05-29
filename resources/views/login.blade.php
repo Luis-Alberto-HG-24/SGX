@@ -21,7 +21,7 @@
                             <div class="row justify-content-center mt-5">
                                 <div class="col-10">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" required placeholder="Username here">
+                                        <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" required placeholder="Username here" title="Ingresa tu usuario">
                                         <label for="userLogin" class="fw-light text-muted"><i class="fa-solid fa-user me-2 text-muted"></i>Usuario</label>
                                     </div>
                                 </div>
@@ -29,7 +29,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-10">
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control form-light" id="password" name="password" required placeholder="Password here">
+                                        <input type="password" class="form-control form-light" id="password" name="password" required placeholder="Password here" title="Ingresa tu contraseña">
                                         <label for="passwordLogin" class="fw-light text-muted"><i class="fa-solid fa-key me-2 text-muted"></i>Contraseña</label>
                                     </div>
                                 </div>
@@ -63,37 +63,37 @@
                             <div class="row my-3">
                                 <div class="col-12 col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="nombre" name="nombre" placeholder="Nombre">
+                                        <input type="text" class="form-control form-light" id="nombre" name="nombre" placeholder="Nombre" required>
                                         <label for="nombre" class="fw-light text-muted"><i class="fa-solid fa-user me-2"></i>Nombre</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno">
+                                        <input type="text" class="form-control form-light" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno" required>
                                         <label for="apellidoP" class="fw-light text-muted"><i class="fa-solid fa-user me-2"></i>Apellido Paterno</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno">
+                                        <input type="text" class="form-control form-light" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno" required>
                                         <label for="apellidoM" class="fw-light text-muted"><i class="fa-solid fa-user me-2"></i>Apellido Materno</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="email" class="form-control form-light" id="email" name="email" placeholder="Correo">
+                                        <input type="email" class="form-control form-light" id="email" name="email" placeholder="Correo" required>
                                         <label for="correo" class="fw-light text-muted"><i class="fa-solid fa-envelope me-2"></i>Correo</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de usuario">
+                                        <input type="text" class="form-control form-light" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de usuario" required title="Requieres: Una letra mayúscula, un número y un carácter especifico. Ejemplo: Username_1" required pattern="^(?=.*[A-Z])(?=.*\d)(?!.*\s)(?=.*[@$!%*?&-_/+])[A-Za-z\d@$!%*?&-_]+$">
                                         <label for="nombreUsuario" class="fw-light text-muted"><i class="fa-regular fa-circle-user me-2"></i>Nombre de usuario</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-4">
-                                        <input type="password" class="form-control form-light" id="password" name="password" placeholder="Contraseña">
+                                        <input type="password" class="form-control form-light" id="password" name="password" placeholder="Contraseña" required title="Requieres: Una letra mayúscula, un número y un carácter especifico. Ejemplo: Password_1" pattern="^(?=.*[A-Z])(?=.*\d)(?!.*\s)(?=.*[@$!%*?&-_/+])[A-Za-z\d@$!%*?&-_/]+$">
                                         <label for="nombre" class="fw-light text-muted"><i class="fa-solid fa-key me-2"></i>Contraseña</label>
                                     </div>
                                 </div>

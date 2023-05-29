@@ -105,6 +105,7 @@ class Funciones extends Controller
     public function updateModal(Request $request)
     {
         $id = $request->id_estudiante;
+        $tipo = $request->tipo;
         $item = Estudiante::find($id);
         $item->nombre_estudiante = $request->nombre_estudiante;
         $item->apellidoPaterno_estudiante = $request->apellidoPaterno_estudiante;
@@ -116,6 +117,10 @@ class Funciones extends Controller
         $item->escuela_procedencia = $request->escuela_procedencia;
         $item->fecha_registro = $request->fecha_registro;
         if ($item->save()) {
+            if ($tipo == "perfil") {
+                Alert::success('Exito', 'Los datos se han actualizado exitosamente.');
+                return redirect()->route('vistas-perfil-estudiante',$item->id_estudiante);
+            }
             Alert::success('Exito', 'Los datos se han actualizado exitosamente.');
             return redirect()->route('vistas-inicio');
         } else {

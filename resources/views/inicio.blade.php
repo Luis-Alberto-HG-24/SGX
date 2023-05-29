@@ -158,56 +158,61 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="nombre_estudiante" name="nombre_estudiante">
+                                    <input type="text" class="form-control form-light" id="nombre_estudiante" name="nombre_estudiante" placeholder="Nombre" required>
                                     <label for="nombre_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Nombre </label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="apellidoPaterno_estudiante" name="apellidoPaterno_estudiante">
+                                    <input type="text" class="form-control form-light" id="apellidoPaterno_estudiante" name="apellidoPaterno_estudiante" placeholder="Apellido Paterno" required>
                                     <label for="apellidoPaterno_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Apellido Paterno</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="apellidoMaterno_estudiante" name="apellidoMaterno_estudiante">
+                                    <input type="text" class="form-control form-light" id="apellidoMaterno_estudiante" name="apellidoMaterno_estudiante" placeholder="Apellido Materno" required>
                                     <label for="apellidoMaterno_estudiante" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Apellido Materno</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="number" class="form-control form-light" id="numero_control" name="numero_control">
+                                    <input type="number" class="form-control form-light" id="numero_control" name="numero_control" placeholder="Número de Control" pattern="[0-9]{10}" maxlength="9">
                                     <label for="numero_control" class="fw-light text-muted"><i class="fa-solid fa-arrow-up-9-1 me-2"></i> Numero de control</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="number" class="form-control form-light" id="telefono_celular" name="telefono_celular">
-                                    <label for="telefono_celular" class="fw-light text-muted"><i class="fa-solid fa-mobile me-2"></i> Telefono Celular</label>
+                                    <input type="tel" class="form-control form-light" id="telefono_celular" name="telefono_celular" placeholder="Teléfono celular" pattern="[0-9]{10}" maxlength="10" required>
+                                    <label for="telefono_celular" class="fw-light text-muted"><i class="fa-solid fa-mobile me-2"></i> Teléfono Celular</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control form-light" id="carrera" name="carrera">
+                                <div class="form mb-3">
                                     <label for="carrera" class="fw-light text-muted"><i class="fa-solid fa-graduation-cap"></i> Carrera </label>
+                                    <select class="form-select form-control form-light" type="text" id="carrera" name="carrera" placeholder="Carrera" aria-label="Default select example" required>
+                                        <option selected disabled><i class="fa-solid fa-graduation-cap" placeholder="Carrera">Seleccionar carrera...</i></option>
+                                        <option value="Ingeniería en Sistemas Computacionales">Ingeniería en Sistemas Computacionales</option>
+                                        <option value="Ingeniería en Gestión Empresarial">Ingeniería en Gestión Empresarial</option>
+                                        <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="date" class="form-control form-light" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento">
+                                    <input type="date" class="form-control form-light" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
                                     <label for="fecha_nacimiento" class="fw-light text-muted"><i class="fa-regular fa-calendar me-2"></i> Fecha de Nacimiento</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="text" class="form-control form-light" id="escuela_procedencia" name="escuela_procedencia" placeholder="Escuela de Procedencia">
-                                    <label for="escuela_procedencia" class="fw-light text-muted"><i class="fa-solid fa-school me-2"></i> Escuela de procedencia</label>
+                                    <input type="text" class="form-control form-light" id="escuela_procedencia" name="escuela_procedencia" placeholder="Escuela de Procedencia" required>
+                                    <label for="escuela_procedencia" class="fw-light text-muted"><i class="fa-solid fa-school me-2"></i> Escuela de Procedencia</label>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">
-                                    <input type="date" class="form-control form-light" id="fecha_registro" name="fecha_registro" placeholder="Fecha de Ingreso">
-                                    <label for="fecha_registro" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Fecha ingreso</label>
+                                    <input type="date" class="form-control form-light" id="fecha_registro" name="fecha_registro" placeholder="Fecha de Ingreso" required>
+                                    <label for="fecha_registro" class="fw-light text-muted"><i class="fa-regular fa-user me-2"></i> Fecha de Ingreso</label>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -236,7 +241,7 @@
                         @method('PUT')
                         @csrf
                         <input type="number" id="id_estudiante" name="id_estudiante" class="d-none">
-                        <input type="text" name="actualizar" value="a">
+                        <input type="text" id="tipo" name="tipo" class="d-none" value="inicio">
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="form-floating mb-4">

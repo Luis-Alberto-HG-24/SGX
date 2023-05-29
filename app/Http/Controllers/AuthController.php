@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -25,10 +26,24 @@ class AuthController extends Controller
     public function logear(Request $request)
     {
         $credenciales = $request->only("nombre_usuario", "password");
+        $reglas = ['nombre_usuario' => 'required', 'password' => 'required'];
+        $mensajes = [
+            'nombre_usuario.required' => 'El nombre de usuario es obligatorio.',
+            'password.required' => 'La contraseña es obligatoria.'
+        ];
+
+        $validador = Validator::make($credenciales, $reglas, $mensajes);
+
+        if ($validador->fails()) {
+            return back()->withErrors($validador)->withInput($credenciales);
+        }
+
         if (Auth::attempt($credenciales)) {
+            alert()->success('Credenciales correctas');
             return redirect()->route('vistas-inicio');
         } else {
-            return back()->withInput($credenciales);
+            alert()->error('Usuario y Contraseña incorrectos');
+            return back()->withInput($credenciales)->withErrors(['login' => 'Usuario o contraseña incorrectos.']);
         }
     }
 
