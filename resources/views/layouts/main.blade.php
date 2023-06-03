@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/dtb5.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/b5dt.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="shortcut icon" href="{{asset('icons/xanna.ico')}}" type="image/x-icon">
 </head>
 <body>
     @include('sweetalert::alert')

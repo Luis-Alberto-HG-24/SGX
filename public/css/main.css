@@ -32,76 +32,77 @@
 }
 
 body {
-  background: white;
+    background: white;
 }
 
-input , select{
-  font-weight: 90 !important;
+input,
+select {
+    font-weight: 90 !important;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-input[type=number] { -moz-appearance:textfield; }
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 
 /* --------- ESTILOS DEL LOGIN --------- */
 
-.img-login{
+.img-login {
     height: 100px;
 }
 
-.login{
+.login {
     border-radius: 3%;
 }
 
-.form-light{
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-radius: 0%;
+.form-light {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 0%;
 }
 
-.btn-login{
-  background-color: var(--azul4);
-  color: whitesmoke;
+.btn-login {
+    background-color: var(--azul4);
+    color: whitesmoke;
 }
 
-
-.btn-login:hover{
-  background-color: var(--verde2);
-  color: white;
+.btn-login:hover {
+    background-color: var(--verde2);
+    color: white;
 }
 
-.small-2{
-  font-size: 13px;
+.small-2 {
+    font-size: 13px;
 }
 
-.body-inicio{
-  background: url('../img/login3.jpeg') no-repeat center center fixed ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  
+.body-inicio {
+    background: url('../img/login3.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
-.bg-white{
-  background: white;
+.bg-white {
+    background: white;
 }
 
-
-.img-usuario-inicio{
-  height: 50px;
+.img-usuario-inicio {
+    height: 50px;
 }
 
-.img-icon{
+.img-icon {
     height: 30px;
 }
 
-.nombre-usuario{
+.nombre-usuario {
     text-decoration: none !important;
 }
 
@@ -109,67 +110,74 @@ input[type=number] { -moz-appearance:textfield; }
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: #212529;
-  }
-  #mainNav .navbar-toggler {
+}
+
+#mainNav .navbar-toggler {
     padding: 0.75rem;
     font-size: 0.75rem;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     text-transform: uppercase;
     font-weight: 700;
-  }
-  #mainNav .navbar-brand {
+}
+
+#mainNav .navbar-brand {
     color: #ffc800;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 700;
     letter-spacing: 0.0625em;
     text-transform: uppercase;
-  }
-  #mainNav .navbar-brand img {
+}
+
+#mainNav .navbar-brand img {
     height: 1.5rem;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 0.95rem;
     color: #fff;
     letter-spacing: 0.0625em;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
     color: var(--azul1);
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     #mainNav {
-      padding-top: 1.5rem;
-      border: none;
-      background-color: transparent;
-      transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+        padding-top: 1.5rem;
+        border: none;
+        background-color: transparent;
+        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     }
     #mainNav .navbar-brand {
-      font-size: 1.5em;
-      transition: font-size 0.3s ease-in-out;
+        font-size: 1.5em;
+        transition: font-size 0.3s ease-in-out;
     }
     #mainNav .navbar-brand img {
-      height: 2rem;
-      transition: height 0.3s ease-in-out;
+        height: 2rem;
+        transition: height 0.3s ease-in-out;
     }
     #mainNav.navbar-shrink {
-      padding-top: 1rem;
-      background-color: #212529;
+        padding-top: 1rem;
+        background-color: #212529;
     }
     #mainNav.navbar-shrink .navbar-brand {
-      font-size: 1.25em;
+        font-size: 1.25em;
     }
     #mainNav.navbar-shrink .navbar-brand svg,
     #mainNav.navbar-shrink .navbar-brand img {
-      height: 1.5rem;
+        height: 1.5rem;
     }
     #mainNav .navbar-nav .nav-item {
-      margin-right: 1rem;
+        margin-right: 1rem;
     }
     #mainNav .navbar-nav .nav-item:last-child {
-      margin-right: 0;
+        margin-right: 0;
     }
 }
+
 header.masthead {
     padding-top: 10.5rem;
     text-align: center;
@@ -179,58 +187,61 @@ header.masthead {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-  }
-  header.masthead .masthead-subheading {
+}
+
+header.masthead .masthead-subheading {
     font-style: italic;
     line-height: 1.5rem;
     font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  header.masthead .masthead-heading {
+}
+
+header.masthead .masthead-heading {
     font-size: 3.25rem;
     font-weight: 700;
     line-height: 3.25rem;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  
-  @media (min-width: 768px) {
+}
+
+@media (min-width: 768px) {
     header.masthead .masthead-subheading {
-      font-size: 2.25rem;
-      font-style: italic;
-      line-height: 2.25rem;
-      margin-bottom: 2rem;
+        font-size: 2.25rem;
+        font-style: italic;
+        line-height: 2.25rem;
+        margin-bottom: 2rem;
     }
     header.masthead .masthead-heading {
-      font-size: 4.5rem;
-      font-weight: 700;
-      line-height: 4.5rem;
-      margin-bottom: 4rem;
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
     }
-  }
+}
 
-  .border-left-primary {
+.border-left-primary {
     border-left: 0.25rem solid #4e73df !important;
-  }
+}
 
-  .borde-inicio{
+.borde-inicio {
     border-radius: 3%;
-  }
+}
 
-  .bg-barra-azul{
+.bg-barra-azul {
     background-color: var(--azul4);
-  }
+}
 
-  .bg-barra-azul{
+.bg-barra-azul {
     background-color: var(--verde3);
-  }
+}
 
-  .bg-barra-rojo{
+.bg-barra-rojo {
     background-color: var(--rojo5);
-  }
+}
 
-  .btn-flotante {
+.btn-flotante {
     color: #ffffff;
     border-radius: 100%;
-    background-color: var(--verde8); /* Color de fondo */
+    background-color: var(--verde8);
+    /* Color de fondo */
     padding: 15px;
     position: fixed;
     bottom: 550px;
@@ -238,26 +249,30 @@ header.masthead {
     transition: all 300ms ease 0ms;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     z-index: 99;
-  }
-  .btn-flotante:hover {
-    background-color: var(--verde7) ; /* Color de fondo al pasar el cursor */
+}
+
+.btn-flotante:hover {
+    background-color: var(--verde7);
+    /* Color de fondo al pasar el cursor */
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-7px);
     color: white;
-  }
-  @media only screen and (max-width: 600px) {
-     .btn-flotante {
-      font-size: 14px;
-      padding: 12px 20px;
-      bottom: 20px;
-      right: 20px;
-    }
-  }
+}
 
-  .btn-flotante-vista{
+@media only screen and (max-width: 600px) {
+    .btn-flotante {
+        font-size: 14px;
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.btn-flotante-vista {
     color: #ffffff;
     border-radius: 100%;
-    background-color: var(--azul4); /* Color de fondo */
+    background-color: var(--azul4);
+    /* Color de fondo */
     padding: 15px;
     position: fixed;
     bottom: 470px;
@@ -265,145 +280,145 @@ header.masthead {
     transition: all 300ms ease 0ms;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     z-index: 99;
-  }
-  .btn-flotante-vista:hover {
-    background-color: var(--verde7) ; /* Color de fondo al pasar el cursor */
+}
+
+.btn-flotante-vista:hover {
+    background-color: var(--azul5);
+    /* Color de fondo al pasar el cursor */
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-7px);
     color: white;
-  }
-  @media only screen and (max-width: 600px) {
-     .btn-flotante-vista {
-      font-size: 14px;
-      padding: 12px 20px;
-      bottom: 20px;
-      right: 20px;
-    }
-  }
+}
 
-  .btn-cerrar{
+@media only screen and (max-width: 600px) {
+    .btn-flotante-vista {
+        font-size: 14px;
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.btn-cerrar {
     background-color: var(--pastel4);
     color: white;
-  }
+}
 
-  .btn-cerrar:hover{
+.btn-cerrar:hover {
     background-color: var(--pastel3);
     color: white;
-  }
+}
 
-  .card-alumno{
+.card-alumno {
     transition: all 0.3s;
-  }
+}
 
-  .card-alumno:hover{
+.card-alumno:hover {
     scale: 1.03;
-  }
+}
 
-  .img-estudiante-perfil{
+.img-estudiante-perfil {
     height: 110px;
-  }
+}
 
-  .small-2{
+.small-2 {
     font-size: 20px !important;
-  }
+}
 
-  .bg-verde{
+.bg-verde {
     background-color: var(--verde3);
     color: white;
-  }
+}
 
-  .bg-verde:hover{
+.bg-verde:hover {
     color: white;
     background-color: var(--verde2);
-  }
+}
 
-  .bg-azul{
+.bg-azul {
     background-color: var(--azul2);
     color: white;
-  }
+}
 
-  .bg-azul:hover{
+.bg-azul:hover {
     color: white;
     background-color: var(--pastel3);
-  }
+}
 
-  .bg-azul2{
+.bg-azul2 {
     background-color: var(--azul4);
     color: white;
-  }
+}
 
-  .bg-azul2:hover{
+.bg-azul2:hover {
     background-color: var(--pastel2);
     color: white;
-  }
+}
 
-  .bg-rojo{
+.bg-rojo {
     background-color: var(--pastel6);
     color: white;
+}
 
-  }
-
-  .bg-rojo:hover{
+.bg-rojo:hover {
     background-color: var(--rojo3);
     color: white;
+}
 
-  }
-
-  .bg-amarillo{
+.bg-amarillo {
     background-color: var(--pastel9);
     color: white;
+}
 
-  }
-
-  .bg-amarillo:hover{
+.bg-amarillo:hover {
     background-color: var(--pastel7);
     color: white;
+}
 
-  }
-
-  .text-small{
+.text-small {
     font-size: 17px !important;
-  }
+}
 
-  .file-select {
+.file-select {
     position: relative;
     display: inline-block;
-  }
+}
 
-  .file-select::before {
+.file-select::before {
     background-color: #5678EF;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    content: 'Seleccionar'; /* testo por defecto */
+    content: 'Seleccionar';
+    /* testo por defecto */
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-  }
-  
-  .file-select input[type="file"] {
+}
+
+.file-select input[type="file"] {
     opacity: 0;
     width: 200px;
     height: 40px;
     display: inline-block;
-  }
-  
-  #btn_mooc_civico::before {
-    content: 'Subir MOOC';
-  }
+}
 
-  .col-centrada{
-    display:flex;
+#btn_mooc_civico::before {
+    content: 'Subir MOOC';
+}
+
+.col-centrada {
+    display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .form-tabla{
+.form-tabla {
     border: none;
     background-color: white;
     text-align: center;
-  }
+}

@@ -31,8 +31,13 @@ class Funciones extends Controller
         $items->nombre_usuario = $request->nombre_usuario;
         $items->email = $request->email;
         $items->password = Hash::make($request->password);
-        $items->save();
-        return redirect()->route('auth-login');
+        if ($items->save()) {
+            alert()->success('Usuario registrado correctamente.');
+            return redirect()->route('auth-login');
+        }else{
+            alert()->error('Usuario no registrado.');
+            return redirect()->route('auth-login');
+        }
     }
 
     /**
@@ -57,10 +62,13 @@ class Funciones extends Controller
         $item->nombre_estudiante = $request->nombre_estudiante;
         $item->apellidoPaterno_estudiante = $request->apellidoPaterno_estudiante;
         $item->apellidoMaterno_estudiante = $request->apellidoMaterno_estudiante;
-        $item->numero_control = $request->numero_control;
-        $item->telefono_celular = $request->telefono_celular;
-        $item->carrera = $request->carrera;
         $item->fecha_nacimiento = $request->fecha_nacimiento;
+        $item->telefono_celular = $request->telefono_celular;
+        $item->numero_control = $request->numero_control;
+        $item->semestre = $request->semestre;
+        $item->carrera = $request->carrera;
+        $item->abreviatura_carrera = $request->abreviatura_carrera;
+        $item->periodo = $request->periodo;
         $item->escuela_procedencia = $request->escuela_procedencia;
         $item->fecha_registro = $request->fecha_registro;
         if ($item->save()) {
@@ -110,10 +118,12 @@ class Funciones extends Controller
         $item->nombre_estudiante = $request->nombre_estudiante;
         $item->apellidoPaterno_estudiante = $request->apellidoPaterno_estudiante;
         $item->apellidoMaterno_estudiante = $request->apellidoMaterno_estudiante;
-        $item->numero_control = $request->numero_control;
-        $item->telefono_celular = $request->telefono_celular;
-        $item->carrera = $request->carrera;
         $item->fecha_nacimiento = $request->fecha_nacimiento;
+        $item->telefono_celular = $request->telefono_celular;
+        $item->numero_control = $request->numero_control;
+        $item->semestre = $request->semestre;
+        $item->carrera = $request->carrera;
+        $item->abreviatura_carrera = $request->abreviatura_carrera;
         $item->escuela_procedencia = $request->escuela_procedencia;
         $item->fecha_registro = $request->fecha_registro;
         if ($item->save()) {
@@ -154,6 +164,5 @@ class Funciones extends Controller
         $datos = Estudiante::find($id);
         return response()->json($datos);
     }
+
 }
-
-

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateEstudiantesTable extends Migration
 {
@@ -18,10 +19,13 @@ class CreateEstudiantesTable extends Migration
             $table->string('nombre_estudiante');
             $table->string('apellidoPaterno_estudiante');
             $table->string('apellidoMaterno_estudiante');
-            $table->unsignedBigInteger('numero_control')->digits(20);
-            $table->unsignedBigInteger('telefono_celular')->digits(20);
-            $table->string('carrera');
             $table->date('fecha_nacimiento');
+            $table->unsignedBigInteger('telefono_celular')->digits(20);
+            $table->unsignedBigInteger('numero_control')->digits(20);
+            $table->unsignedInteger('semestre');
+            $table->string('carrera');
+            $table->string('abreviatura_carrera');
+            $table->string('periodo');
             $table->string('escuela_procedencia');
             $table->date('fecha_registro');
             $table->timestamps();

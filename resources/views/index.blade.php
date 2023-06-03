@@ -1,2 +1,0 @@
-<h1>Funciono la autentificacion del Login :)</h1>
-<a class="nav-link" href="{{ route('auth-logout') }}" style="font-size: 30px; color:red;" title="Cerrar Sesion"><i class="fa-solid fa-door-open"></i>Salir</a>

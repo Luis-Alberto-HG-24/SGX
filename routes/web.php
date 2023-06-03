@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::controller(Vistas::class)->group(function (){
     Route::get('/inicio', 'index')->name('vistas-inicio');
     Route::get('/perfil/{id}', 'perfilEstudiante')->name('vistas-perfil-estudiante');
+    Route::get('/pdf_constancia/{id}', 'pdf_constancia')->name('vistas_constancia_liberacion');
+    Route::get('/pdf_constancia_final/{id}', 'pdf_constancia_final')->name('vistas_constancia_total');
+    Route::get('/buscar', 'buscar')->name('vistas-buscar');
 });
 
 Route::controller(Funciones::class)->group(function (){
@@ -21,6 +24,6 @@ Route::controller(Funciones::class)->group(function (){
 
 Route::controller(AuthController::class)->group(function (){
     Route::get('/', 'login')->name('auth-login');
-    Route::post('/signIn', 'logear')->name('auth-logear');
+    Route::post('/logear', 'logear')->name('auth-logear');
     Route::get('/logout', 'logout')->name('auth-logout');
 });
