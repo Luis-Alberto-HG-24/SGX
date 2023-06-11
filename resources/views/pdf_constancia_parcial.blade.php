@@ -51,7 +51,7 @@
                         </tr>
                         <tr>
                             <td rowspan="2" class="tabla">Actividad</td>
-                            <td rowspan="2" class="tabla"></td>
+                            <td rowspan="2" class="tabla">{{$evento->nombre_evento}}</td>
                             <td class="tabla">Fecha</td>
                             <td class="tabla">Grupo</td>
                         </tr>
@@ -61,7 +61,19 @@
                         </tr>
                         <tr>
                             <td colspan="2" class="tabla">Horas Acreditadas</td>
-                            <td colspan="2" class="tabla">xx Horas (Culturales, Deportivas o Cívicas)</td>
+                            <td colspan="2" class="tabla">
+                                {{$evento->horas}} Horas
+
+                                @if ($evento->credito == 'Civico')
+                                    Cívicas
+                                @elseif($evento->credito == 'Cultural')
+                                    Culturales
+                                @else
+                                    Deportivas
+                                @endif
+
+                            
+                            </td>
                         </tr>
                     </tbody>
                 </table>

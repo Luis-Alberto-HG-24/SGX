@@ -17,6 +17,8 @@ class CreateEventoTable extends Migration
             $table->id('id_evento');
             $table->string('nombre_evento');
             $table->integer('horas');
+            $table->string('credito');
+            $table->date('fecha_evento');
             $table->foreignId('id_estudiante_fk')->constrained('estudiantes', 'id_estudiante');
             $table->timestamps();
         });

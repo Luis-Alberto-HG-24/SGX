@@ -15,10 +15,7 @@ class CreateCreditoCulturalTable extends Migration
     {
         Schema::create('credito_cultural', function (Blueprint $table) {
             $table->id('id_creditoCultural');
-            $table->string('mooc');
-            $table->string('evidencia');
             $table->string('estado');
-            $table->string('ubicacion_fisica');
             $table->date('fecha_registro');
             $table->integer('total_horas');
             $table->foreignId('id_estudiante_fk')->constrained('estudiantes', 'id_estudiante');

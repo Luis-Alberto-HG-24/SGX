@@ -1,4 +1,6 @@
 function editar(id) {
+    let periodo = ``;
+    let abreviatura = ``;
     fetch(`/obtenerDatos/${id}`, {
             method: 'GET',
             headers: {
@@ -8,6 +10,7 @@ function editar(id) {
         })
         .then(response => response.json())
         .then(datos => {
+            console.log(datos);
             $('#nombre_estudiante_act').val(datos.nombre_estudiante);
             $('#apellidoPaterno_estudiante_act').val(datos.apellidoPaterno_estudiante);
             $('#apellidoMaterno_estudiante_act').val(datos.apellidoMaterno_estudiante);
@@ -17,7 +20,21 @@ function editar(id) {
             $('#fecha_nacimiento_act').val(datos.fecha_nacimiento);
             $('#escuela_procedencia_act').val(datos.escuela_procedencia);
             $('#fecha_registro_act').val(datos.fecha_registro);
-            $('#id_estudiante').val(datos.id_estudiante)
+            $('#id_estudiante').val(datos.id_estudiante);
+            $('#semestre_act').val(datos.semestre);
+            $('#ubicacion_act').val(datos.ubicacion);
+            $('#abreviatura_carrera_act').val(datos.abreviatura_carrera);
+
+
+            if (datos.periodo == 'Enero - Junio') {
+                periodo = ` <option selected value"${datos.periodo}"><i class="fa-solid fa-graduation-cap" placeholder="Carrera">${datos.periodo}</i></option>
+                <option value="Agosto - Diciembre">Agosto - Diciembre</option>`
+            } else {
+                periodo = ` <option selected value"${datos.periodo}"><i class="fa-solid fa-graduation-cap" placeholder="Carrera">${datos.periodo}</i></option>
+                <option value="Enero - Junio">Enero - Junio</option>`;
+            }
+
+            $('#periodo_act').html(periodo);
 
         })
         .catch(error => {
@@ -48,7 +65,28 @@ function eliminar(id) {
         });
 }
 
+
 $(function() {
+
+    $('#btn_agregar_siguiente').on("click", function(){
+        ocultar('agregar_pt1');
+        mostrar('agregar_pt2');
+    })
+
+    $('#btn_agregar_regresar').on("click", function(){
+        mostrar('agregar_pt1');
+        ocultar('agregar_pt2');
+    })
+
+    $('#btn_act_siguiente').on("click", function(){
+        ocultar('act_pt1');
+        mostrar('act_pt2');
+    })
+
+    $('#btn_act_regresar').on("click", function(){
+        mostrar('act_pt1');
+        ocultar('act_pt2');
+    })
 
     $('#tabla_usuarios').DataTable();
 
@@ -73,6 +111,26 @@ $(function() {
 
         // Obtener el campo de entrada de abreviatura
         var abreviaturaInput = document.getElementById('abreviatura_carrera');
+        
+
+        // Actualizar el valor del campo de entrada de abreviatura
+        if (carrera === 'Ingeniería en Sistemas Computacionales') {
+            abreviaturaInput.value = 'SIS';
+        } else if (carrera === 'Ingeniería en Gestión Empresarial') {
+            abreviaturaInput.value = 'GEM';
+        } else if (carrera === 'Ingeniería Industrial') {
+            abreviaturaInput.value = 'IND';
+        } else {
+            abreviaturaInput.value = '';
+        }
+    });
+    document.getElementById('carrera_act').addEventListener('change', function() {
+        // Obtener el valor seleccionado de la carrera
+        var carrera = this.value;
+
+        // Obtener el campo de entrada de abreviatura
+        var abreviaturaInput = document.getElementById('abreviatura_carrera_act');
+        
 
         // Actualizar el valor del campo de entrada de abreviatura
         if (carrera === 'Ingeniería en Sistemas Computacionales') {

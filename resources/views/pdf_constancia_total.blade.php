@@ -14,6 +14,10 @@
         width: 150px;
         height: auto;
     }
+
+    .upperCase{
+        text-transform: uppercase;
+    }
 </style>
 
 <!doctype html>
@@ -51,7 +55,12 @@
                         </tr>
                         <tr>
                             <td rowspan="2" class="tabla">Actividad</td>
-                            <td rowspan="2" class="tabla"></td>
+                            <td rowspan="2" class="tabla">
+                                Liberación de Credito
+                                @if ($creditoTotal == "civico")
+                                    Cívico
+                                @endif
+                            </td>
                             <td class="tabla">Fecha</td>
                             <td class="tabla">Grupo</td>
                         </tr>
@@ -61,13 +70,29 @@
                         </tr>
                         <tr>
                             <td colspan="2" class="tabla">Total de Horas Acreditadas</td>
-                            <td colspan="2" class="tabla">20 Horas --credito-- </td>
+                            <td colspan="2" class="tabla">20 Horas de Creditos 
+                                @if ($creditoTotal == "civico")
+                                    Civicos
+                                @elseif($creditoTotal == "deportivo")
+                                    Deportivos
+                                @else
+                                    Culturales
+                                @endif
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <br>
-                <h1 style="text-align: center;">Constancia de Liberación de Créditos Deportivos</h1>
-                <p style="text-align: justify;"><b>NOTA:</b> EL ALUMNO DEBERÁ CONSERVAR EL PRESENTE DOCUMENTO, PUESTO QUE ACREDITA EL CUMPLIMIENTO DE 20 HRS. CUBIERTAS DE CRÉDITOS (DEPORTIVOS) EN TOTAL.</p>
+                <h1 style="text-align: center;">Constancia de Liberación de Créditos 
+                    @if ($creditoTotal == "civico")
+                        Civicos
+                    @elseif($creditoTotal == "deportivo")
+                        Deportivos
+                    @else
+                        Culturales
+                    @endif
+                </h1>
+                <p style="text-align: justify;"><b>NOTA:</b> EL ALUMNO DEBERÁ CONSERVAR EL PRESENTE DOCUMENTO, PUESTO QUE ACREDITA EL CUMPLIMIENTO DE 20 HRS. CUBIERTAS DE CRÉDITOS <span class="upperCase">({{$creditoTotal}})</span> EN TOTAL.</p>
                 <p style="text-align: justify;">ESTE DOCUMENTO SERÁ JUSTIFICACIÓN PARA SUS ACTIVIDADES EXTRAESCOLARES EN CADA UNA DE SUS ASIGNATURAS.</p>
                 <p style="text-align: justify;">PARA QUE TENGA VALIDEZ ESTE DOCUMENTO DEBE TENER FIRMA Y SELLO DEL JEFE DEL DEPARTAMENTO QUE PROPORCIONA EL APOYO.</p>
                 <p style="text-align: justify;">SI EXISTIERA ALGÚN ERROR EN CUALQUIER DATO PRESENTADO, FAVOR DE AVISAR DE INMEDIATO PARA CORREGIRLO.</p>

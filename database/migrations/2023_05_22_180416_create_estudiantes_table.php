@@ -28,6 +28,7 @@ class CreateEstudiantesTable extends Migration
             $table->string('periodo');
             $table->string('escuela_procedencia');
             $table->date('fecha_registro');
+            $table->string('ubicacion');
             $table->timestamps();
         });
     }
