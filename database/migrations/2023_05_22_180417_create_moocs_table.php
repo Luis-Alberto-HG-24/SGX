@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCreditoCivicoTable extends Migration
+class CreateMoocsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCreditoCivicoTable extends Migration
      */
     public function up()
     {
-        Schema::create('credito_civico', function (Blueprint $table) {
-            $table->id('id_creditoCivico');
-            $table->string('estado')->nullable();
-            $table->date('fecha_registro')->nullable();
-            $table->integer('total_horas');
+        Schema::create('moocs', function (Blueprint $table) {
+            $table->id('id_mooc');
+            $table->string('nombre');
+            $table->string('ruta');
+            $table -> string('credito');
             $table->foreignId('id_estudiante_fk')->constrained('estudiantes', 'id_estudiante');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateCreditoCivicoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('credito_civico');
+        Schema::dropIfExists('moocs');
     }
 }

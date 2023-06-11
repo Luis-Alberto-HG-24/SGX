@@ -20,7 +20,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('vistas-inicio');
         }
-        return view('login', compact('titulo','navbar'));
+        return view('auth/login', compact('titulo','navbar'));
     }
 
     public function logear(Request $request)
@@ -51,6 +51,7 @@ class AuthController extends Controller
     {
         Auth::logout();
         Session::flush();
+        alert()->success('Exito','Se ha cerrado la sesión éxito');
         return redirect()->route('auth-login');
     }
 
