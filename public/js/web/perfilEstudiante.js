@@ -17,9 +17,15 @@ function vistaPrevia(id,credito){
         } else if(data.extension == 'pdf'){
 
             evidencia = `<iframe style="width:100%; height:700px;" src="${data.ruta}" frameborder="0"></iframe>`
+
+        }else if(data.extension == 'mp4'){
+            evidencia = `<video src="${data.ruta}" controls></video>`
+
+        }else if(data.extension == 'doc'|| data.extension == 'docx'){
+            evidencia = `<iframe style="width:100%; height:700px;" src="${data.ruta}" frameborder="0"></iframe>`
         }
 
-        $('#seccion_vistaPrevia').html(evidencia)
+        $('#seccion_vistaPrevia').html(evidencia);
         console.log(data);
     })
     .catch(error => {

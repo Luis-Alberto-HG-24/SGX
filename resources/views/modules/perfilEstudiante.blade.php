@@ -694,7 +694,7 @@
                             </div>
                             <div class="col-lg-6 text-center">
                                 <div class="file-select mt-3" id="btn_evidencia" >
-                                    <input type="file" name="btn_archivo" aria-label="Archivo" accept="image/.jpg, .jpeg, .png, /document/.doc,.docx,.pdf">
+                                    <input type="file" name="btn_archivo" aria-label="Archivo" accept="image/jpg, image/jpeg, image/png, document/doc, document/docx, document/pdf">
                                 </div>
                             </div>
                         </div>
@@ -755,7 +755,7 @@
                             </div>
                             <div class="col-lg-6 text-center">
                                 <div class="file-select mt-3" id="btn_evidencia" >
-                                    <input type="file" name="btn_archivo_act" aria-label="Archivo" accept="image/.jpg, .jpeg, .png, /document/.doc,.docx,.pdf">
+                                    <input type="file" name="btn_archivo_act" aria-label="Archivo" accept="image/jpg, image/jpeg, image/png, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, video/mp4">
                                 </div>
                             </div>
                         </div>

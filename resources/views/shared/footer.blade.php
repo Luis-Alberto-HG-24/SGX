@@ -4,7 +4,7 @@
             <div class="col-lg-12 text-center">
                 {{-- <img src="{{asset('img/LogoSGX.png')}}" alt=""> --}}
             </div>
-            <div class="col-lg-12 text-center text-muted fw-light">
+            <div class="col-lg-12 text-center fw-light text-primary">
                 SGX - Desarrollado por Two Brains 
             </div>
         </div>

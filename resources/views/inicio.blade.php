@@ -28,7 +28,15 @@
                         </div>
                     </div>
                 </div>
-            @else
+            @elseif($items == 'No hay ningun estudiante que coincida con la busqueda')
+                <div class="container my-5">
+                    <div class="row">
+                        <div class="col text-center p-5">
+                            <div class="fs-2 text-muted fw-light mt-5">No hay ningun estudiante que coincida con la busqueda</div>
+                        </div>
+                    </div>
+                </div>
+            @else 
                 {{--  SECCION USUARIOS TARJETAS--}}
                 <div class="container my-5" id="seccion_usuarios_tarjetas">
                     <div class="row justify-content-evenly my-5">

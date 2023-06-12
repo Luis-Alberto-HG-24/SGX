@@ -169,7 +169,6 @@ class Funciones extends Controller
         return response()->json($datos);
     }
 
-
     public function obtenerMooc($tipo,$id){
         $credito = "credito_".$tipo;
         $datos = DB::table('moocs')->where('credito', '=', $credito)->Where('id_estudiante_fk',$id)->get();
@@ -271,14 +270,17 @@ class Funciones extends Controller
 
             if ($extension == "jpg" || $extension == "jpeg" || $extension == "png") {
                 $ruta = storage_path("app/public/Credito".$request->tipo_credito_evento."/img");
+
             } else if($extension == "pdf"){
                 $ruta = storage_path("app/public/Credito".$request->tipo_credito_evento."/pdf");
+
             }else if($extension == "doc" || $extension == "docx"){
                 $ruta = storage_path("app/public/Credito".$request->tipo_credito_evento."/doc");
+
             }else{
                 $ruta = storage_path("app/public/Credito".$request->tipo_credito_evento."/video");
             }
-            $nombre = "evidencia_"."_".$archivo->getClientOriginalName();
+            $nombre = "evidencia_".$archivo->getClientOriginalName();
             $evento->nombre_evento = $request->nombre_evento;
             $evento->horas = $request->horas;
             $evento->credito = $request->tipo_credito_evento;
@@ -329,7 +331,6 @@ class Funciones extends Controller
                         $creditoActualizar->save();
                     }else{
                          $credito->estado = "En tramite";
-                         $credito->ubicacion_fisica = "nose";
                          $credito->fecha_registro = $request->fecha_evento;
                          $credito->total_horas = $request->horas;
                          $credito->id_estudiante_fk = $id_estudiante;
@@ -431,26 +432,31 @@ class Funciones extends Controller
 
             if ($request->hasFile('btn_archivo_act')) {
 
+                $evidencia = Evidencia::find($request->id_evidencia);
+                $rutaVieja = $evidencia->ruta_evidencia ."/". $evidencia->nombre_evidencia;
+                unlink($rutaVieja);
+
                 $archivo = $request->file('btn_archivo_act');
                 $extension = $archivo->guessClientExtension();
-                $evidencia = Evidencia::find($request->id_evidencia);
-                unlink($evidencia->ruta_evidencia."/".$evidencia->nombre_evidencia);
+                
                 $nombre = "evidencia_".$archivo->getClientOriginalName();
                 $evidencia->nombre_evidencia = $nombre;
                 $evidencia->extension = $extension;
-                $evidencia->save();
                 
                 if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') {
-                    $ruta = storage_path('app/public/credito'.$credito."/img");
-                } else if($extension == 'pdf'){
-                    $ruta = storage_path('app/public/credito'.$credito."/pdf");
-                }else if($extension == 'doc' || $extension == 'docx'){
-                    $ruta = storage_path('app/public/credito'.$credito."/doc");
-                }else{
-                    $ruta = storage_path('app/public/credito'.$credito."/video");
-                }
-                
+                    $ruta = storage_path('app/public/Credito'.$credito."/img");
 
+                } else if($extension == 'pdf'){
+                    $ruta = storage_path('app/public/Credito'.$credito."/pdf");
+
+                }else if($extension == 'doc' || $extension == 'docx'){
+                    $ruta = storage_path('app/public/Credito'.$credito."/doc");
+                    
+                }else{
+                    $ruta = storage_path('app/public/Credito'.$credito."/video");
+                }
+                $evidencia->ruta_evidencia = $ruta;
+                $evidencia->save();
                 $archivo->move($ruta,$nombre);
 
                 alert()->success('Exito','Se actualizo el evento con exito');
@@ -541,9 +547,46 @@ class Funciones extends Controller
             }else{
                 $ruta = '../storage/Creditodeportivo/pdf/'.$evidencia->nombre_evidencia;
             }
+        }else if($evidencia->extension == 'mp4'){
+            if ($credito == 'Civico') {
+                $ruta = '../storage/Creditocivico/video/'.$evidencia->nombre_evidencia;
+            } else if($credito == 'Cultural'){
+                $ruta = '../storage/Creditocultural/video/'.$evidencia->nombre_evidencia;
+            }else{
+                $ruta = '../storage/Creditodeportivo/video/'.$evidencia->nombre_evidencia;
+            }
+        }else if($evidencia->extension == 'doc' || $evidencia->extension == 'docx'){
+            if ($credito == 'Civico') {
+                $ruta = '../storage/Creditocivico/doc/'.$evidencia->nombre_evidencia;
+            } else if($credito == 'Cultural'){
+                $ruta = '../storage/Creditocultural/doc/'.$evidencia->nombre_evidencia;
+            }else{
+                $ruta = '../storage/Creditodeportivo/doc/'.$evidencia->nombre_evidencia;
+            }
         }
 
         return response()->json(['ruta'=> $ruta, 'extension'=> $evidencia->extension]);
+    }
+
+    public function updateUsuario(Request $request, $id){
+        $usuario = User::find($id);
+
+        $usuario->nombre = $request->nombre;
+        $usuario->apellido_paterno = $request->apellidoP;
+        $usuario->apellido_materno = $request->apellidoM;
+        $usuario->nombre_usuario = $request->nombre_usuario;
+        $usuario->email = $request->correo;
+        if ($request->password != null) {
+            $usuario->password = Hash::make($request->password);
+        } 
+        
+        if ($usuario->save()) {
+           alert()->success('Exito','Se ha actualizado los datos del usuario con exito');
+           return redirect()-> route('vistas-perfilUsuario');
+        } else {
+            alert()->error('Error','No se ha logrado actualizar los datos del usuario');
+            return redirect()-> route('vistas-perfilUsuario');
+        }
     }
 
 }

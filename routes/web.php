@@ -30,6 +30,7 @@ Route::controller(Funciones::class)->group(function (){
     Route::post('/editarEvento','editarEvento')->name('funciones-editarEvento');
     Route::delete('/eliminarEvento/{estudiante}','eliminarEvento')->name('funciones-eliminarEvento');
     Route::get('/vistaPrevia/{id}/{credito}', 'vistaPrevia')->name('funciones-vistaPrevia');
+    Route::put('/updateUsuario/{id}','updateUsuario')->name('funciones-updateUsusario');
 });
 
 Route::controller(AuthController::class)->group(function (){

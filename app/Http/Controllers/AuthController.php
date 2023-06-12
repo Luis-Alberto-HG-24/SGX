@@ -26,6 +26,7 @@ class AuthController extends Controller
     public function logear(Request $request)
     {
         $credenciales = $request->only("nombre_usuario", "password");
+        
         $reglas = ['nombre_usuario' => 'required', 'password' => 'required'];
         $mensajes = [
             'nombre_usuario.required' => 'El nombre de usuario es obligatorio.',

@@ -160,11 +160,14 @@ class Vistas extends Controller
 
     public function buscar(Request $request){
         $titulo = "Resultados";
+        $civicos = Civico::all();
+        $culturales = Cultural::all();
+        $deportivos = Deportivo::all();
         $termino = $request->input('termino');
         $items = Estudiante::where('nombre_estudiante', 'LIKE', "%$termino%")->orWhere('numero_control', 'LIKE', "%$termino%")->orWhere('abreviatura_carrera', 'LIKE', "%$termino%")->get();
-        if ($items == "") {
+        if ($items == "[]") {
             $items = "No hay ningun estudiante que coincida con la busqueda";
         }
-        return view('inicio', compact('titulo','items'));
+        return view('inicio', compact('titulo','items','civicos','deportivos','culturales'));
     }
 }
